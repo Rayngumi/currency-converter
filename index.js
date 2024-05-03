@@ -25,7 +25,13 @@ populateCurrencies();
 
 function convert() {
   if (!input || !fromCurrency || !toCurrency || !result) {
-    console.error("Null pointer reference:", input, fromCurrency, toCurrency, result);
+    console.error(
+      "Null pointer reference:",
+      input,
+      fromCurrency,
+      toCurrency,
+      result
+    );
     return;
   }
   const amount = Number(input.value);
@@ -56,4 +62,3 @@ function convert() {
       result.textContent = "Conversion failed. Please try again later.";
     });
 }
-
