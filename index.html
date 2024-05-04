@@ -1,18 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <title>Currency Converter</title>
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
     <div class="container">
-      <h1>Currency Converter</h1>
-      <input type="number" id="input" placeholder="Enter Amount" />
-      <select id="from-currency"></select>
-      <select id="to-currency"></select>
-      <button id="convertbtn">Convert</button>
+        <h1 class="header">Currency Converter</h1>
+        <div class="converter">
+            <select id="from-currency"></select>
+            <select id="to-currency"></select>
+            <input type="number" id="from-amount" placeholder="" />
+            <input type="number" id="to-amount" placeholder="" />
+        </div>
     </div>
-    <div id="result"></div>
     <script src="index.js"></script>
-  </body>
+</body>
 </html>
