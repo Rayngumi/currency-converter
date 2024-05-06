@@ -3,7 +3,8 @@ const toAmountInput = document.querySelector("#to-amount");
 const fromCurrency = document.querySelector("#from-currency");
 const toCurrency = document.querySelector("#to-currency");
 
-async function populateCurrencies() {
+// Fetches currency codes and populates the currency dropdowns
+async function fetchAndPopulateCurrencies() {
   try {
     const response = await fetch(
       "https://v6.exchangerate-api.com/v6/cc54afd12bb7c5e0b2316b7f/codes"
@@ -27,6 +28,7 @@ async function populateCurrencies() {
   }
 }
 
+// Converts currency based on input values
 async function convert() {
   let amount;
   let from;
@@ -61,12 +63,15 @@ async function convert() {
     }
   } catch (error) {
     console.error("Failed to convert currencies:", error);
+    // You can add more specific error handling here
   }
 }
 
+// Event listeners
 fromAmountInput.addEventListener("input", convert);
 toAmountInput.addEventListener("input", convert);
 fromCurrency.addEventListener("change", convert);
 toCurrency.addEventListener("change", convert);
 
-populateCurrencies();
+// Initial population of currencies
+fetchAndPopulateCurrencies();
